@@ -128,6 +128,7 @@ public:
         Format_RGBX64,
         Format_RGBA64,
         Format_RGBA64_Premultiplied,
+        Format_BGR888,
 #if 0
         // reserved for future use
         Format_Grayscale16,

@@ -284,6 +284,7 @@ bool QImageData::checkForAlphaPixels() const
     case QImage::Format_RGB555:
     case QImage::Format_RGB666:
     case QImage::Format_RGB888:
+    case QImage::Format_BGR888:
     case QImage::Format_RGBX8888:
     case QImage::Format_BGR30:
     case QImage::Format_RGB30:
@@ -5376,6 +5377,19 @@ static Q_CONSTEXPR QPixelFormat pixelformats[] = {
                      /*PREMULTIPLIED*/     QPixelFormat::Premultiplied,
                      /*INTERPRETATION*/    QPixelFormat::UnsignedShort,
                      /*BYTE ORDER*/        QPixelFormat::CurrentSystemEndian),
+        //QImage::Format_BGR888:
+        QPixelFormat(QPixelFormat::BGR,
+                    /*RED*/                8,
+                    /*GREEN*/              8,
+                    /*BLUE*/               8,
+                    /*FOURTH*/             0,
+                    /*FIFTH*/              0,
+                    /*ALPHA*/              0,
+                    /*ALPHA USAGE*/       QPixelFormat::IgnoresAlpha,
+                    /*ALPHA POSITION*/    QPixelFormat::AtBeginning,
+                    /*PREMULTIPLIED*/     QPixelFormat::NotPremultiplied,
+                    /*INTERPRETATION*/    QPixelFormat::UnsignedByte,
+                    /*BYTE ORDER*/        QPixelFormat::CurrentSystemEndian),
 };
 Q_STATIC_ASSERT(sizeof(pixelformats) / sizeof(*pixelformats) == QImage::NImageFormats);
 
